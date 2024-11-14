@@ -13,6 +13,7 @@ return {
   { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   { import = "astrocommunity.colorscheme.vscode-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+  { import = "astrocommunity.colorscheme.modus-nvim" },
   { import = "astrocommunity.programming-language-support.web-tools-nvim" },
   { import = "astrocommunity.game.leetcode-nvim" },
   { import = "astrocommunity.completion.copilot-cmp"},
