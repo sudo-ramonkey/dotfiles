@@ -30,7 +30,8 @@ return {
     contrast = "hard", -- can be "hard", "soft" or empty string
     palette_overrides = {
         -- bg = "#000000",
-        bg = "#191919"
+        bg = "#1e1e1e",
+        dark0_hard = "#1e1e1e"
       },
     dim_inactive = false,
     transparent_mode = true,
