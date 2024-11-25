@@ -8,22 +8,26 @@
 
 -- Function to set the theme based on the background mode
 local function set_theme()
-  if vim.o.background == "light" then
-    vim.cmd("colorscheme onedark")  -- Apply modus theme
+  if vim.api.nvim_get_option("background") == "light" then
+    vim.o.background = "light"
+    vim.cmd("colorscheme onedark")  -- Apply onedark
+    vim.api.nvim_set_option("background", "light")
   else
     -- Setup for gruvbox dark theme
     vim.cmd("colorscheme gruvbox")  -- Apply gruvbox theme
+    vim.o.background = "dark"
+    vim.api.nvim_set_option("background", "dark")
   end
 end
 
 -- Automatically set the theme when `background` option changes
-vim.api.nvim_create_autocmd("OptionSet", {
-  pattern = "background",
-  callback = set_theme,
-})
+-- vim.api.nvim_create_autocmd("OptionSet", {
+--   pattern = "background",
+--   callback = set_theme,
+-- })
 
 -- Set the initial background (either "light" or "dark")
-vim.o.background = "dark"  -- Change to "light" if you prefer light mode as the default
+-- vim.o.background = "light"  -- Change to "light" if you prefer light mode as the default
 
 local function neotree_to_the_right()
   -- Function to set neotree to the right
@@ -31,9 +35,25 @@ local function neotree_to_the_right()
   vim.cmd("Neotree right")
 end
 -- Apply the initial theme
-set_theme()
-neotree_to_the_right()
+-- set_theme()
+-- neotree_to_the_right()
 
+-- Function to get system theme and set vim background accordingly
+local function get_theme()
+    -- Run the gsettings command and capture output
+    local handle = io.popen("gsettings get org.gnome.desktop.interface color-scheme")
+    if not handle then return end
+    
+    local result = handle:read("*a")
+    handle:close()
+    
+    -- Set vim background based on system theme
+    if result:match("dark") then
+        vim.o.background = "dark"
+    else
+        vim.o.background = "light"
+    end
+end
 
-
-
+-- Execute the function
+get_theme()

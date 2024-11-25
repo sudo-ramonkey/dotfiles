@@ -11,7 +11,7 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "gruvbox",
+    colorscheme = "adwaita",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     gruvbox = {
       contrast = "hard",
