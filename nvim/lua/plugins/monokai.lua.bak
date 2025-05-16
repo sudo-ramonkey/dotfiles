@@ -1,0 +1,40 @@
+-- return {
+--   {
+--     "AstroNvim/astroui",
+--     ---@type AstroUIOpts
+--     opts = {
+--       colorscheme = "monokai-pro",
+--     },
+--   },
+--   {
+--     "loctvl842/monokai-pro.nvim",
+--     config = function()
+--       require("monokai-pro").setup({
+--         filter = "spectrum",
+--         background_clear = {
+--           "toggleterm",
+--           "telescope",
+--           "renamer",
+--           "notify",
+--           "which-key",
+--         },
+--         overridePalette = function(filter)
+--           if vim.o.background == "dark" then
+--             return {
+--               background = "#121212",
+--               accent1 = "#f92672",
+--               accent2 = "#fd971f",
+--               accent3 = "#e6db74",
+--               accent4 = "#a6e22e",
+--               accent5 = "#66d9ef",
+--               accent6 = "#ae81ff",
+--               text = "#fff",
+--             }
+--           end
+--         end,
+--         transparent_background = false,
+--         terminal_colors = true,
+--       })
+--     end,
+--   },
+-- }

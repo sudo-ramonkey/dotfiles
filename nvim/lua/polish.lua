@@ -59,4 +59,5 @@
 -- get_theme()
 vim.keymap.set("n", "<leader>a", "<cmd>AssistantToggle<cr>", { desc = "Assistant window toggle" })
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree position=right toggle<cr>", { desc = "Toggle Explorer" })
-
+vim.g.neovide_hide_mouse_when_typing = true
+vim.g.Illuminate_ftblacklist = {'*'}  -- Disable for all file types

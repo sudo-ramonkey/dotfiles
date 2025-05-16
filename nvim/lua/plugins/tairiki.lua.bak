@@ -1,0 +1,25 @@
+return {
+  {
+    "AstroNvim/astroui",
+    ---@type AstroUIOpts
+    opts = {
+      colorscheme = "tairiki",
+    },
+  },
+  {
+    "deparr/tairiki.nvim",
+    config = function()
+      require("tairiki").setup({
+        palette = "dark",
+        transparent = false,
+        terminal = true,
+
+        colors = function(c , opts)
+          if opts.palette == "dark" then
+            c.bg = '#131313'
+          end
+        end,
+      })
+    end,
+  },
+}
