@@ -75,6 +75,8 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     cp
+    zsh-completions
+    fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Aliases
 alias cat='batcat'
+alias sail='./vendor/bin/sail'
 alias connect-oracle-server='ssh rocky@193.122.151.14'
 alias open='xdg-open'
 alias ..='cd ..'
@@ -183,3 +186,17 @@ if [ -x $(which fortune) ] ; then
 fi
 
 # export MANPAGER='nvim +Man!+"set nocul" +"set noshowcmd" +"set noruler" +"set noshowmode" +"set laststatus=0" +"set showtabline=0" +"set nonumber"'
+
+# pnpm
+export PNPM_HOME="/home/ramonkey/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# composer
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+# cargo
+export PATH="$PATH:$HOME/.cargo/bin/"
+
